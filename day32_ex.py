@@ -55,11 +55,11 @@ def main():
                     )
                     st.session_state['saved'] = True
                     st.success('이미 저장한 결과입니다.' if rid is None else f'기록 {rid} 저장 완료')
-                    pp('분석 저장 완료')
+                    print('분석 저장 완료')
                 except ValueError as ve:
                     st.warning(str(ve))
                 except psycopg.Error as pe:
-                    pp('저장 오류: ', type(pe).__name__)
+                    print('저장 오류: ', type(pe).__name__)
                     st.error('저장 실패. 연결/권한/테이블을 확인하고 재시도하세요.')
                 except OSError as oe:
                     st.error('sql폴더를 확인하세요.')
@@ -103,7 +103,7 @@ def main():
         except ValueError as ve:
             st.warning(str(ve))
         except psycopg.Error as pe:
-            pp('조회 오류: ', type(pe).__name__)
+            print('조회 오류: ', type(pe).__name__)
             st.error('이력 조회 실패. DB 연결과 text_runs 테이블을 확인하세요.')
         except OSError as oe:
             st.error('sql폴더를 확인하세요.')
@@ -111,7 +111,6 @@ def main():
 if __name__ == '__main__':
     main()
 
-up(5)
 
 
 
