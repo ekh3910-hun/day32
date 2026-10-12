@@ -6,7 +6,6 @@ from pathlib import Path
 import psycopg
 from psycopg.rows import dict_row
 from psycopg.types.json import Jsonb # JSON데이터 처리
-from util.print_util import pp, up
 from dotenv import load_dotenv
 
 # local 실행을 위한 .env 로딩
