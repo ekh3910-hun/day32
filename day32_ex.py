@@ -103,8 +103,8 @@ def main():
         except ValueError as ve:
             st.warning(str(ve))
         except psycopg.Error as pe:
-            print('조회 오류: ', type(pe).__name__)
-            st.error('이력 조회 실패. DB 연결과 text_runs 테이블을 확인하세요.')
+            print('조회 오류:', type(pe).__name__, str(pe))
+            st.error(f'이력 조회 실패: {type(pe).__name__}')
         except OSError as oe:
             st.error('sql폴더를 확인하세요.')
 
