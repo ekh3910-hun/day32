@@ -6,7 +6,7 @@ import psycopg
 import streamlit as st
 from day32_logic import analyze_text
 from day32_db import save_run, list_runs, get_run, summary, delete_run
-from util.print_util import pp, up
+
 
 # 결과 표시 함수
 def show_result(result):
